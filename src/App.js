@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import React from "react";
+import { Provider } from "react-redux";
+import store from "./store";
+import "./App.css";
+import PizzaForm from "./components/PizzaForm";
+import PizzaMain from "./components/PizzaMain";
+import PizzaStatus from "./components/PizzaStatus";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div>
+        <h1>Pizza Restaurant</h1>
+        <div className="">
+          <PizzaForm />
+        </div>
+        <div className="container" style={{ marginTop: "15px" }}>
+          <div className="">
+            <PizzaStatus />
+          </div>
+          <div className="">
+            <PizzaMain />
+          </div>
+        </div>
+      </div>
+    </Provider>
   );
 }
 
