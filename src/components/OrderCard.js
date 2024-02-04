@@ -31,7 +31,6 @@ const OrderCard = (props) => {
           )} sec`
         );
         if (elapsedSeconds >= 180) {
-          console.log("Something special happens after 3 minutes!");
           setColor("red");
         }
         currentTime += 1;
